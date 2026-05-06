@@ -999,7 +999,283 @@ body {
 </head>
 <body>
   <div id="app">
+    <!-- 顶部标题栏 -->
+    <header class="top-bar">
+      <button v-if="currentView !== 'home'" class="back-btn" @click="goBack">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <h1>{{ viewTitle }}</h1>
+      <div class="top-right">
+        <button v-if="currentView === 'practice'" class="translate-btn" :class="{ active: showTranslation }" @click="showTranslation = !showTranslation">
+          {{ showTranslation ? 'English' : '翻译' }}
+        </button>
+        <span class="timer" v-if="timerActive">{{ formatTime(timeLeft) }}</span>
+      </div>
+    </header>
+
+    <!-- 主页 -->
+    <main class="content" v-if="currentView === 'home'">
+      <div class="home-grid">
+        <div class="home-card" @click="enterPractice">
+          <div class="card-icon practice-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <span>练习</span>
+        </div>
+        <div class="home-card" @click="enterExam">
+          <div class="card-icon exam-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <span>考试</span>
+        </div>
+        <div class="home-card" @click="enterWrongBook">
+          <div class="card-icon wrong-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <span>错题本</span>
+          <span class="badge" v-if="wrongCount > 0">{{ wrongCount }}</span>
+        </div>
+        <div class="home-card" @click="enterMock">
+          <div class="card-icon mock-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <span>模拟考</span>
+        </div>
+        <div class="home-card" @click="enterSettings">
+          <div class="card-icon settings-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <span>设置</span>
+        </div>
+      </div>
+
+      <!-- 学习进度概览 -->
+      <div class="progress-overview">
+        <h3>学习进度</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar" :style="{ width: overallProgress + '%' }"></div>
+        </div>
+        <span class="progress-text">{{ studiedCount }} / {{ totalQuestions }} 题 ({{ overallProgress }}%)</span>
+      </div>
+    </main>
+
+    <!-- 练习模式：领域选择 -->
+    <main class="content" v-if="currentView === 'practice-domains'">
+      <div class="domain-list">
+        <div class="domain-item" v-for="d in domains" :key="d.name" @click="startDomainPractice(d.name)">
+          <div class="domain-info">
+            <span class="domain-name">{{ d.name }}</span>
+            <span class="domain-count">{{ d.count }} 题</span>
+          </div>
+          <div class="domain-progress">
+            <div class="mini-bar"><div class="mini-fill" :style="{ width: getDomainProgress(d.name) + '%' }"></div></div>
+            <span>{{ getDomainProgress(d.name) }}%</span>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </main>
+
+    <!-- 答题页面（练习/考试通用） -->
+    <main class="content question-page" v-if="currentView === 'exam' || currentView === 'mock' || currentView === 'practice'">
+      <!-- 进度条 -->
+      <div class="question-progress">
+        <div class="q-progress-bar"><div class="q-progress-fill" :style="{ width: questionProgress + '%' }"></div></div>
+        <span>{{ currentIndex + 1 }} / {{ currentQuestions.length }}</span>
+      </div>
+
+      <!-- 题目 -->
+      <div class="question-card">
+        <div class="question-header">
+          <span class="question-id">第 {{ currentIndex + 1 }} 题</span>
+          <span class="question-type" v-if="isMultiSelect(currentQuestion)">多选</span>
+        </div>
+        <p class="question-stem">{{ currentQuestion.stem }}</p>
+        <p v-if="showTranslation && currentQuestion.stem_zh" class="question-stem-zh">{{ currentQuestion.stem_zh }}</p>
+
+        <div class="options">
+          <div v-for="(text, key) in shuffledOptions" :key="key"
+               class="option" :class="optionClass(key)"
+               @click="selectOption(key)">
+            <span class="option-letter">{{ key }}</span>
+            <div class="option-content">
+              <span class="option-text">{{ text }}</span>
+              <span v-if="showTranslation && getShuffledOptionZh(key)" class="option-text-zh">{{ getShuffledOptionZh(key) }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 提交按钮 -->
+        <button v-if="!showAnswer && selectedOptions.length > 0" class="submit-btn" @click="submitAnswer">
+          提交答案
+        </button>
+
+        <!-- 解析 -->
+        <div v-if="showAnswer" class="analysis-box">
+          <div class="result-badge" :class="isCorrect ? 'correct' : 'wrong'">
+            {{ isCorrect ? '回答正确!' : '回答错误' }}
+          </div>
+          <p class="correct-answer">正确答案: {{ shuffledAnswer }}</p>
+          <p class="analysis-text">{{ currentQuestion.analysis }}</p>
+          <p v-if="showTranslation && currentQuestion.analysis_zh" class="analysis-text-zh">{{ currentQuestion.analysis_zh }}</p>
+          <div class="action-buttons">
+            <button v-if="!isInWrongBook(currentQuestion.id)" class="action-btn add-wrong" @click="addToWrongBook(currentQuestion)">
+              加入错题本
+            </button>
+            <button v-else class="action-btn remove-wrong" @click="removeFromWrongBook(currentQuestion.id)">
+              移出错题本
+            </button>
+            <button class="action-btn next-btn" @click="nextQuestion">
+              {{ isLastQuestion ? '查看结果' : '下一题' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 考试结果页 -->
+    <main class="content" v-if="currentView === 'result'">
+      <div class="result-card">
+        <div class="score-circle" :class="scoreClass">
+          <span class="score-num">{{ examScore }}</span>
+          <span class="score-label">分</span>
+        </div>
+        <div class="result-stats">
+          <div class="stat"><span class="stat-num correct-color">{{ examCorrect }}</span><span>正确</span></div>
+          <div class="stat"><span class="stat-num wrong-color">{{ examWrong }}</span><span>错误</span></div>
+          <div class="stat"><span class="stat-num">{{ examTotal }}</span><span>总题数</span></div>
+        </div>
+        <div class="result-actions">
+          <button class="result-btn primary" @click="goHome">返回首页</button>
+        </div>
+      </div>
+
+      <!-- 错题详情 -->
+      <div v-if="examWrongList.length > 0" class="wrong-detail-section">
+        <h3 class="section-title">错题回顾 ({{ examWrongList.length }} 题)</h3>
+        <div class="wrong-detail-card" v-for="ans in examWrongList" :key="ans.question.id">
+          <div class="wd-header">
+            <span class="wd-id">{{ ans.question.id }}</span>
+          </div>
+          <p class="wd-stem">{{ ans.question.stem }}</p>
+          <div class="wd-options">
+            <div v-for="(text, key) in (ans.shuffledOptions || ans.question.options)" :key="key" class="wd-option"
+                 :class="{ 'wd-correct': (ans.shuffledAnswer || ans.question.answer).includes(key), 'wd-selected-wrong': ans.selected.includes(key) && !(ans.shuffledAnswer || ans.question.answer).includes(key) }">
+              <strong>{{ key }}.</strong> {{ text }}
+            </div>
+          </div>
+          <div class="wd-answer-row">
+            <span class="wd-your-answer">你的答案: {{ ans.selected.join(',') || '未作答' }}</span>
+            <span class="wd-correct-answer">正确答案: {{ ans.shuffledAnswer || ans.question.answer }}</span>
+          </div>
+          <p class="wd-analysis" v-if="ans.question.analysis">{{ ans.question.analysis }}</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- 错题本 -->
+    <main class="content" v-if="currentView === 'wrong-book'">
+      <div v-if="wrongBook.length === 0" class="empty-state">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <p>还没有错题，继续加油!</p>
+      </div>
+      <div v-else>
+        <div class="wrong-actions">
+          <button class="small-btn" @click="startWrongPractice">顺序练习</button>
+          <button class="small-btn" @click="startWrongRandom">随机练习</button>
+          <button class="small-btn danger" @click="clearWrongBook">清空错题本</button>
+        </div>
+        <div class="wrong-list">
+          <div class="wrong-item" v-for="q in wrongBook" :key="q.id" @click="reviewWrong(q)">
+            <div class="wrong-item-content">
+              <span class="wrong-id">{{ q.id }}</span>
+              <p class="wrong-stem">{{ q.stem.substring(0, 60) }}...</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 模拟考选项 -->
+    <main class="content" v-if="currentView === 'mock-select'">
+      <div class="mock-options">
+        <div class="mock-item" @click="startMockExam">
+          <h3>随机抽题</h3>
+          <p>随机抽取题目进行模拟考试</p>
+        </div>
+        <div class="mock-item" @click="startMockSequential">
+          <h3>顺序练习</h3>
+          <p>按题号顺序逐题练习</p>
+        </div>
+        <div class="mock-item" @click="startMockWrong">
+          <h3>错题练习</h3>
+          <p>从错题本中随机抽取练习</p>
+        </div>
+        <div class="mock-item" @click="startMockNotes">
+          <h3>笔记模式</h3>
+          <p>查看所有题目及解析，快速复习</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- 笔记模式 -->
+    <main class="content" v-if="currentView === 'notes'">
+      <div class="notes-list">
+        <div class="note-card" v-for="q in currentQuestions" :key="q.id">
+          <div class="note-header">
+            <span class="note-id">{{ q.id }}</span>
+          </div>
+          <p class="note-stem">{{ q.stem }}</p>
+          <p v-if="showTranslation && q.stem_zh" class="note-stem-zh">{{ q.stem_zh }}</p>
+          <div class="note-options">
+            <div v-for="(text, key) in q.options" :key="key" class="note-option" :class="{ 'note-correct': key === q.answer.split(',')[0] }">
+              <strong>{{ key }}.</strong> {{ text }}
+              <span v-if="showTranslation && q.options_zh && q.options_zh[key]" class="note-option-zh">{{ q.options_zh[key] }}</span>
+            </div>
+          </div>
+          <p class="note-answer">答案: {{ q.answer }}</p>
+          <p class="note-analysis">{{ q.analysis }}</p>
+          <p v-if="showTranslation && q.analysis_zh" class="note-analysis-zh">{{ q.analysis_zh }}</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- 设置 -->
+    <main class="content" v-if="currentView === 'settings'">
+      <div class="settings-list">
+        <div class="setting-item">
+          <span>考试题目数量</span>
+          <select v-model="settings.examCount">
+            <option :value="30">30 题</option>
+            <option :value="60">60 题</option>
+            <option :value="90">90 题</option>
+          </select>
+        </div>
+        <div class="setting-item">
+          <span>考试时间（分钟）</span>
+          <select v-model="settings.examTime">
+            <option :value="30">30 分钟</option>
+            <option :value="45">45 分钟</option>
+            <option :value="60">60 分钟</option>
+            <option :value="90">90 分钟</option>
+          </select>
+        </div>
+        <div class="setting-item">
+          <span>答对后自动跳转</span>
+          <label class="switch">
+            <input type="checkbox" v-model="settings.autoNext">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-item danger-item" @click="resetProgress">
+          <span>重置所有学习进度</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </div>
+      </div>
+    </main>
   </div>
+
 
   <script>
 /**
