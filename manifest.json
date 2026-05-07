@@ -1,0 +1,11 @@
+{
+  "name": "Copilot 认证刷题",
+  "short_name": "Copilot题库",
+  "description": "GitHub Copilot 认证考试离线刷题工具",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f6fa",
+  "theme_color": "#4A90D9",
+  "orientation": "portrait",
+  "icons": []
+}
