@@ -3603,6 +3603,796 @@ window.QUESTIONS_DATA = [
       "D": "建议完全新颖的项目，同时减少项目开发时间"
     },
     "analysis_zh": "当 GitHub Copilot 基于常用代码模式进行训练时，它倾向于建议反映训练数据中最常见实践的代码片段。这意味着建议可能是常规的而非创新的，但它们代表了成熟的编码模式。"
+  },
+  {
+    "id": "Question 114",
+    "stem": "Is GitHub Copilot free to use for everyone?",
+    "options": {
+      "A": "No",
+      "B": "Yes"
+    },
+    "answer": "B",
+    "analysis": "",
+    "reference": "https://github.com/features/copilot/plans",
+    "stem_zh": "GitHub Copilot 是否对所有人免费使用？",
+    "options_zh": {
+      "A": "否",
+      "B": "是"
+    },
+    "analysis_zh": "GitHub Copilot 提供免费计划（Copilot Free），所有拥有 GitHub 账户的用户均可使用，但功能有一定限制。付费计划（Pro、Business、Enterprise）提供更多功能。"
+  },
+  {
+    "id": "Question 115",
+    "stem": "Which option below is NOT a possible way to grant access to Copilot for members of an organization?",
+    "options": {
+      "A": "As a member of an Organization, you can enable Copilot directly from your account settings.",
+      "B": "Via your Enterprise settings, enable GitHub Copilot for selected organizations or  all organizations.",
+      "C": "Via your Organizations settings, enable GitHub Copilot for either selected teams or users or the entire organization.",
+      "D": "You can use GitHub's REST API to grant access to GitHub Copilot for teams, or specific users, in your organization."
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/managing-access-to-github-copilot-in-your-organization/granting-access-to-copilot-for-members-of-your-organization",
+    "stem_zh": "以下哪项不是为组织成员授予 Copilot 访问权限的方式？",
+    "options_zh": {
+      "A": "作为组织成员，你可以直接从账户设置中启用 Copilot。",
+      "B": "通过企业设置，为选定的组织或所有组织启用 GitHub Copilot。",
+      "C": "通过组织设置，为选定的团队或用户或整个组织启用 GitHub Copilot。",
+      "D": "你可以使用 GitHub 的 REST API 为团队或特定用户授予 GitHub Copilot 访问权限。"
+    },
+    "analysis_zh": "组织成员无法直接从自己的账户设置中自行启用 Copilot，需要由组织或企业管理员通过组织设置、企业设置或 REST API 来授予访问权限。"
+  },
+  {
+    "id": "Question 116",
+    "stem": "What IDEs does GitHub Copilot support?",
+    "options": {
+      "A": "Visual Studio Code, Xcode, Vim/NeoVim",
+      "B": "Azure Data Studio, Visual Studio, IntelliJ IDEA",
+      "C": "Visual Studio, NetBeans, Eclipse",
+      "D": "Visual Studio, BlueJ, NetBeans"
+    },
+    "answer": "A,B",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/using-github-copilot/getting-code-suggestions-in-your-ide-with-github-copilot",
+    "stem_zh": "GitHub Copilot 支持哪些 IDE？（选择二项）",
+    "options_zh": {
+      "A": "Visual Studio Code、Xcode、Vim/NeoVim",
+      "B": "Azure Data Studio、Visual Studio、IntelliJ IDEA",
+      "C": "Visual Studio、NetBeans、Eclipse",
+      "D": "Visual Studio、BlueJ、NetBeans"
+    },
+    "analysis_zh": "GitHub Copilot 支持多种 IDE，包括 Visual Studio Code、Visual Studio、JetBrains IDE（如 IntelliJ IDEA）、Vim/NeoVim、Xcode 和 Azure Data Studio 等。NetBeans、Eclipse 和 BlueJ 不在官方支持列表中。"
+  },
+  {
+    "id": "Question 117",
+    "stem": "What command is used to install the GitHub Copilot extension on the CLI?",
+    "options": {
+      "A": "gh extension install github/gh-copilot",
+      "B": "gh copilot install",
+      "C": "gh copilot setup",
+      "D": "gh extension add copilot"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/managing-copilot/configure-personal-settings/installing-github-copilot-in-the-cli",
+    "stem_zh": "安装 GitHub Copilot CLI 扩展使用什么命令？",
+    "options_zh": {
+      "A": "gh extension install github/gh-copilot",
+      "B": "gh copilot install",
+      "C": "gh copilot setup",
+      "D": "gh extension add copilot"
+    },
+    "analysis_zh": "安装 GitHub Copilot CLI 扩展的正确命令是 `gh extension install github/gh-copilot`，这是 GitHub CLI 的官方扩展安装方式。"
+  },
+  {
+    "id": "Question 118",
+    "stem": "What are some of the principles of Prompt Engineering?",
+    "options": {
+      "A": "Focus on a single, well-defined task",
+      "B": "Ensure instructions are detailed and explicit",
+      "C": "Provide rich context for AI",
+      "D": "Write long, complex instructions"
+    },
+    "answer": "A,B,C",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/using-github-copilot/prompt-engineering-for-github-copilot",
+    "stem_zh": "提示工程（Prompt Engineering）的一些原则是什么？（选择三项）",
+    "options_zh": {
+      "A": "专注于单一、明确的任务",
+      "B": "确保指令详细且明确",
+      "C": "为 AI 提供丰富的上下文",
+      "D": "编写冗长复杂的指令"
+    },
+    "analysis_zh": "提示工程的核心原则包括：专注于单一明确的任务（A）、提供详细明确的指令（B）以及提供丰富的上下文信息（C）。冗长复杂的指令反而会降低效果。"
+  },
+  {
+    "id": "Question 119",
+    "stem": "How can you exclude specific files from GitHub Copilot?",
+    "options": {
+      "A": "Editing the file .gitignore",
+      "B": "Browsing to the repository settings on GitHub and adding the paths to exclude",
+      "C": "Configuring exclusions in the Copilot configuration file",
+      "D": "Using a command in the terminal"
+    },
+    "answer": "B",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/managing-copilot/configuring-and-auditing-content-exclusion/excluding-content-from-github-copilot",
+    "stem_zh": "如何排除特定文件不被 GitHub Copilot 使用？",
+    "options_zh": {
+      "A": "编辑 .gitignore 文件",
+      "B": "在 GitHub 上浏览到仓库设置并添加要排除的路径",
+      "C": "在 Copilot 配置文件中配置排除项",
+      "D": "在终端中使用命令"
+    },
+    "analysis_zh": "要排除特定文件，需要在 GitHub 仓库设置中的 Copilot 部分添加要排除的文件路径。.gitignore 文件不影响 Copilot 的内容排除。"
+  },
+  {
+    "id": "Question 120",
+    "stem": "Which is true about Copilot's Content exclusions?",
+    "options": {
+      "A": "Context exclusions can be configured at the repository and organization level",
+      "B": "Copilot offers different plans with privacy considerations",
+      "C": "Copilot completely ignores excluded files",
+      "D": "Content exclusions do not affect code completion",
+      "E": "Content exclusions are applied instantly"
+    },
+    "answer": "A,B",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/managing-copilot/configuring-and-auditing-content-exclusion/excluding-content-from-github-copilot",
+    "stem_zh": "关于 Copilot 的内容排除，以下哪些说法是正确的？（选择二项）",
+    "options_zh": {
+      "A": "内容排除可以在仓库和组织级别进行配置",
+      "B": "Copilot 提供不同的计划，具有不同的隐私考虑",
+      "C": "Copilot 完全忽略被排除的文件",
+      "D": "内容排除不影响代码补全",
+      "E": "内容排除立即生效"
+    },
+    "analysis_zh": "内容排除可以在仓库和组织级别配置（A 正确）；Copilot 不同计划有不同的隐私特性（B 正确）。Copilot 不是完全忽略排除文件（可能通过 IDE 间接获取语义信息），内容排除会影响代码补全，且最多需要 30 分钟才能生效。"
+  },
+  {
+    "id": "Question 121",
+    "stem": "Which of the following describes the GitHub Copilot Editor configuration file?",
+    "options": {
+      "A": "A JSON file with security settings",
+      "B": "A Markdown file with natural language instructions for customizing Copilot Chat responses",
+      "C": "A YAML file with build instructions",
+      "D": "An XML file with deploy settings"
+    },
+    "answer": "B",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot",
+    "stem_zh": "以下哪项描述了 GitHub Copilot Editor 配置文件？",
+    "options_zh": {
+      "A": "包含安全设置的 JSON 文件",
+      "B": "包含自然语言指令的 Markdown 文件，用于自定义 Copilot Chat 响应",
+      "C": "包含构建指令的 YAML 文件",
+      "D": "包含部署设置的 XML 文件"
+    },
+    "analysis_zh": "GitHub Copilot Editor 配置文件（.github/copilot-instructions.md）是一个 Markdown 文件，其中包含自然语言形式的指令，用于自定义 Copilot Chat 的响应行为。"
+  },
+  {
+    "id": "Question 122",
+    "stem": "Which of the following describes how to use the GitHub Copilot's Productivity API?",
+    "options": {
+      "A": "To collect audit logs",
+      "B": "To exclude specific files",
+      "C": "To collect usage metrics from organization members",
+      "D": "To automatically update Copilot"
+    },
+    "answer": "C",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/rolling-out-github-copilot-at-scale/analyzing-usage-over-time-with-the-copilot-metrics-api",
+    "stem_zh": "以下哪项描述了如何使用 GitHub Copilot 的 Productivity API？",
+    "options_zh": {
+      "A": "收集审计日志",
+      "B": "排除特定文件",
+      "C": "收集组织成员的使用指标",
+      "D": "自动更新 Copilot"
+    },
+    "analysis_zh": "GitHub Copilot 的 Productivity API 用于收集组织成员的 Copilot 使用指标，帮助管理员了解 Copilot 的采用率和使用情况。"
+  },
+  {
+    "id": "Question 123",
+    "stem": "Which of the following integrates GitHub Copilot Chat with external tools?",
+    "options": {
+      "A": "GitHub Copilot Extensions",
+      "B": "GitHub Copilot Marketplace",
+      "C": "GitHub Copilot Integrations",
+      "D": "GitHub Copilot Open"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/using-extensions-to-integrate-external-tools-with-copilot-chat",
+    "stem_zh": "以下哪项将 GitHub Copilot Chat 与外部工具集成？",
+    "options_zh": {
+      "A": "GitHub Copilot Extensions",
+      "B": "GitHub Copilot Marketplace",
+      "C": "GitHub Copilot Integrations",
+      "D": "GitHub Copilot Open"
+    },
+    "analysis_zh": "GitHub Copilot Extensions 是将 Copilot Chat 与外部工具集成的机制，允许第三方服务与 Copilot Chat 交互。"
+  },
+  {
+    "id": "Question 124",
+    "stem": "How can you provide GitHub Copilot with context to generate tailored responses for your repository?",
+    "options": {
+      "A": "By creating a file named `.github/copilot-instructions.md` in the repository",
+      "B": "By sending an email to GitHub support with your project details",
+      "C": "By modifying the `.gitconfig` file to include custom instructions",
+      "D": "By creating a GitHub issue named `copilot-instructions` in the repository with the necessary context"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/enterprise-cloud@latest/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot",
+    "stem_zh": "如何为 GitHub Copilot 提供上下文，以生成针对你的仓库的定制化响应？",
+    "options_zh": {
+      "A": "在仓库中创建名为 `.github/copilot-instructions.md` 的文件",
+      "B": "向 GitHub 支持发送包含项目详情的电子邮件",
+      "C": "修改 `.gitconfig` 文件以包含自定义指令",
+      "D": "在仓库中创建名为 `copilot-instructions` 的 GitHub Issue 以提供必要的上下文"
+    },
+    "analysis_zh": "可以通过在仓库中创建 `.github/copilot-instructions.md` 文件来为 Copilot 提供自定义上下文，Copilot 会读取该文件中的指令来定制化其响应。"
+  },
+  {
+    "id": "Question 125",
+    "stem": "Can GitHub Copilot use semantic information from a file that is ignored by GitHub Copilot content exclusions?",
+    "options": {
+      "A": "Yes, if the information is provided by the IDE indirectly.",
+      "B": "No, it will ignore all information from excluded files."
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/managing-copilot/configuring-and-auditing-content-exclusion/excluding-content-from-github-copilot#limitations-of-content-exclusions",
+    "stem_zh": "GitHub Copilot 能否使用被内容排除忽略的文件中的语义信息？",
+    "options_zh": {
+      "A": "可以，如果信息由 IDE 间接提供。",
+      "B": "不可以，它会忽略来自被排除文件的所有信息。"
+    },
+    "analysis_zh": "虽然文件被内容排除设置排除，但 IDE 仍可能间接提供该文件的语义信息（如类型定义、符号引用等），Copilot 可以利用这些间接信息。"
+  },
+  {
+    "id": "Question 126",
+    "stem": "What happens when you exclude content from GitHub Copilot?",
+    "options": {
+      "A": "Code completion will not be available in the affected files.",
+      "B": "The content in affected files will not inform code completion suggestions in other files.",
+      "C": "The content in affected files will continue to inform GitHub Copilot Chat's responses.",
+      "D": "Code completion will be unaffected in the affected files."
+    },
+    "answer": "A,B",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/managing-copilot/configuring-and-auditing-content-exclusion/excluding-content-from-github-copilot#about-content-exclusions-for-copilot",
+    "stem_zh": "当你从 GitHub Copilot 中排除内容时会发生什么？（选择二项）",
+    "options_zh": {
+      "A": "受影响文件中的代码补全将不可用。",
+      "B": "受影响文件中的内容不会影响其他文件的代码补全建议。",
+      "C": "受影响文件中的内容将继续影响 GitHub Copilot Chat 的响应。",
+      "D": "代码补全在受影响文件中不受影响。"
+    },
+    "analysis_zh": "排除内容后：受影响文件中不会提供代码补全（A 正确），且这些文件的内容不会作为上下文影响其他文件的代码补全建议（B 正确）。C 错误，Chat 也会受影响。"
+  },
+  {
+    "id": "Question 127",
+    "stem": "What is the easiest way to get started with GitHub Copilot?",
+    "options": {
+      "A": "Request access from GitHub Support and wait for approval before using GitHub Copilot.",
+      "B": "Use the Copilot website and paste your code when asking for suggestions.",
+      "C": "Install the Copilot extension in your preferred environment, such as Visual Studio Code.",
+      "D": "Create a new public GitHub repo and enable Copilot to scan your code and make suggestions."
+    },
+    "answer": "C",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/using-github-copilot/getting-started-with-github-copilot",
+    "stem_zh": "开始使用 GitHub Copilot 最简单的方式是什么？",
+    "options_zh": {
+      "A": "向 GitHub 支持请求访问权限并等待批准后再使用 GitHub Copilot。",
+      "B": "使用 Copilot 网站并在请求建议时粘贴代码。",
+      "C": "在你首选的环境（如 Visual Studio Code）中安装 Copilot 扩展。",
+      "D": "创建一个新的公共 GitHub 仓库并启用 Copilot 扫描代码并提供建议。"
+    },
+    "analysis_zh": "最简单的方式是在你常用的 IDE（如 Visual Studio Code）中安装 Copilot 扩展，登录 GitHub 账户后即可开始使用。"
+  },
+  {
+    "id": "Question 128",
+    "stem": "What does GitHub Copilot analyze to offer relevant suggestions as you are developing new code?",
+    "options": {
+      "A": "Analyzes the context in all files within the repository.",
+      "B": "Analyzes the context in the current file and related files.",
+      "C": "Analyzes only the context within the current file.",
+      "D": "Analyzes only the context within the current line of code."
+    },
+    "answer": "B",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot#guide-copilot-towards-helpful-outputs",
+    "stem_zh": "GitHub Copilot 分析什么内容来在你开发新代码时提供相关建议？",
+    "options_zh": {
+      "A": "分析仓库中所有文件的上下文。",
+      "B": "分析当前文件和相关文件的上下文。",
+      "C": "仅分析当前文件内的上下文。",
+      "D": "仅分析当前代码行内的上下文。"
+    },
+    "analysis_zh": "GitHub Copilot 分析当前文件以及相关文件（如导入的文件、测试文件等）的上下文来生成相关建议，而不是仅看当前行或仓库中所有文件。"
+  },
+  {
+    "id": "Question 129",
+    "stem": "Which of the following options best describes GitHub Copilot?",
+    "options": {
+      "A": "An AI coding assistant that helps developers by suggesting code and completing code snippets.",
+      "B": "A version control system that tracks and manages changes in a codebase.",
+      "C": "A code editor that provides debugging and error-checking features.",
+      "D": "A tool that automatically tests and deploys code to production environments."
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot",
+    "stem_zh": "以下哪个选项最准确地描述了 GitHub Copilot？",
+    "options_zh": {
+      "A": "一个 AI 编码助手，通过建议代码和补全代码片段来帮助开发者。",
+      "B": "一个版本控制系统，跟踪和管理代码库中的变更。",
+      "C": "一个代码编辑器，提供调试和错误检查功能。",
+      "D": "一个自动测试并将代码部署到生产环境的工具。"
+    },
+    "analysis_zh": "GitHub Copilot 是一个 AI 编码助手，它通过在开发者编写代码时提供智能建议和自动补全代码片段来提高开发效率。"
+  },
+  {
+    "id": "Question 130",
+    "stem": "How does GitHub Copilot handle data retention for code suggestions in the IDE?",
+    "options": {
+      "A": "Suggestions are held temporarily in memory and discarded after use, not written to disk",
+      "B": "All suggestions are permanently stored in a local database for future reference",
+      "C": "Suggestions are automatically saved to GitHub repositories for version control",
+      "D": "Code snippets are cached on disk for 30 days before being deleted"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://resources.github.com/learn/pathways/copilot/essentials/how-github-copilot-handles-data/",
+    "stem_zh": "GitHub Copilot 如何处理 IDE 中代码建议的数据保留？",
+    "options_zh": {
+      "A": "建议临时保存在内存中，使用后即丢弃，不会写入磁盘。",
+      "B": "所有建议永久存储在本地数据库中以供将来参考。",
+      "C": "建议自动保存到 GitHub 仓库以进行版本控制。",
+      "D": "代码片段在磁盘上缓存 30 天后删除。"
+    },
+    "analysis_zh": "GitHub Copilot 在 IDE 中生成的代码建议仅临时保存在内存中，使用后即被丢弃，不会写入磁盘或长期存储。"
+  },
+  {
+    "id": "Question 131",
+    "stem": "Which steps occur when GitHub Copilot's proxy service processes a prompt?",
+    "options": {
+      "A": "Tests for toxic language, relevance checks, and detection of prompt hacking attempts",
+      "B": "Translation to multiple programming languages and syntax validation",
+      "C": "Automatic code compilation and execution in a sandbox environment",
+      "D": "Direct transmission to public repositories for reference checking"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://resources.github.com/learn/pathways/copilot/essentials/how-github-copilot-handles-data/",
+    "stem_zh": "GitHub Copilot 的代理服务处理提示词时会执行哪些步骤？",
+    "options_zh": {
+      "A": "测试有毒语言、相关性检查以及检测提示词注入攻击",
+      "B": "翻译为多种编程语言和语法验证",
+      "C": "在沙箱环境中自动编译和执行代码",
+      "D": "直接传输到公共仓库进行参考检查"
+    },
+    "analysis_zh": "GitHub Copilot 的代理服务在处理提示词时会进行多项安全检查，包括过滤有毒语言、评估相关性以及检测提示词注入（prompt hacking）攻击。"
+  },
+  {
+    "id": "Question 132",
+    "stem": "Which set of principles correctly represents Microsoft's six key principles for Responsible AI that guide GitHub Copilot's development?",
+    "options": {
+      "A": "Fairness, Reliability and Safety, Privacy and Security, Inclusiveness, Transparency, and Accountability",
+      "B": "Efficiency, Speed, Accuracy, Innovation, Reliability, and Security",
+      "C": "Privacy, Performance, Accessibility, Scalability, Maintainability, and Testing",
+      "D": "Security, Development, Operations, Maintenance, Support, and Documentation"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-with-github-copilot/3-six-principles-of-responsible-ai",
+    "stem_zh": "以下哪组原则正确代表了指导 GitHub Copilot 开发的微软负责任 AI 六大关键原则？",
+    "options_zh": {
+      "A": "公平性、可靠性和安全性、隐私和安全、包容性、透明度和问责制",
+      "B": "效率、速度、准确性、创新、可靠性和安全性",
+      "C": "隐私、性能、可访问性、可扩展性、可维护性和测试",
+      "D": "安全性、开发、运维、维护、支持和文档"
+    },
+    "analysis_zh": "微软的负责任 AI 六大原则是：公平性（Fairness）、可靠性和安全性（Reliability and Safety）、隐私和安全（Privacy and Security）、包容性（Inclusiveness）、透明度（Transparency）和问责制（Accountability）。"
+  },
+  {
+    "id": "Question 133",
+    "stem": "Which of the following is a potential benefit of using GitHub Copilot to enhance developer workflows?",
+    "options": {
+      "A": "It can suggest code snippets to increase developer productivity.",
+      "B": "It completely replaces the need for code review in every project.",
+      "C": "It automatically merges pull requests without human approval.",
+      "D": "It only works with software written in a single programming language."
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot",
+    "stem_zh": "以下哪项是使用 GitHub Copilot 增强开发者工作流的潜在好处？",
+    "options_zh": {
+      "A": "它可以推荐代码片段以提高开发者的生产力。",
+      "B": "它完全取代了每个项目中代码审查的需求。",
+      "C": "它可以在没有人工批准的情况下自动合并拉取请求。",
+      "D": "它只能用于单一编程语言编写的软件。"
+    },
+    "analysis_zh": "GitHub Copilot 的核心功能是通过推荐代码片段来帮助开发者提高编码效率，它并不能替代代码审查或自动合并 PR，也不限于单一编程语言。"
+  },
+  {
+    "id": "Question 134",
+    "stem": "Which statement correctly describes GitHub Copilot's CLI command functionality?",
+    "options": {
+      "A": "Users can get command explanations using 'gh copilot explain' and command suggestions using 'gh copilot suggest'",
+      "B": "Commands are automatically executed without user confirmation when using 'gh copilot suggest'",
+      "C": "The 'gh copilot explain' command modifies system files without showing the explanation",
+      "D": "Suggested commands are directly executed without being copied to the clipboard first"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line",
+    "stem_zh": "以下哪项陈述正确描述了 GitHub Copilot 的 CLI 命令功能？",
+    "options_zh": {
+      "A": "用户可以使用 'gh copilot explain' 获取命令解释，使用 'gh copilot suggest' 获取命令推荐。",
+      "B": "使用 'gh copilot suggest' 时，命令会在未经用户确认的情况下自动执行。",
+      "C": "'gh copilot explain' 命令会修改系统文件而不显示解释。",
+      "D": "推荐的命令会直接执行而不会先复制到剪贴板。"
+    },
+    "analysis_zh": "GitHub Copilot CLI 提供两个核心命令：'gh copilot explain' 用于解释命令，'gh copilot suggest' 用于推荐命令，推荐的命令需要用户确认后才会执行。"
+  },
+  {
+    "id": "Question 135",
+    "stem": "What is the primary purpose of the '/tests' slash command in GitHub Copilot?",
+    "options": {
+      "A": "It generates a suite of unit tests for the currently open file, using context from existing test files if available",
+      "B": "It runs all existing unit tests in the project without generating new ones",
+      "C": "It only validates the syntax of existing test files without creating new tests",
+      "D": "It permanently removes all existing test files to start fresh"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/using-github-copilot/guides-on-using-github-copilot/writing-tests-with-github-copilot",
+    "stem_zh": "GitHub Copilot 中 '/tests' 斜杠命令的主要用途是什么？",
+    "options_zh": {
+      "A": "它为当前打开的文件生成一套单元测试，如果可用则利用现有测试文件的上下文。",
+      "B": "它运行项目中所有现有的单元测试而不生成新的测试。",
+      "C": "它仅验证现有测试文件的语法而不创建新测试。",
+      "D": "它会永久删除所有现有测试文件以重新开始。"
+    },
+    "analysis_zh": "/tests 命令用于为当前打开的文件自动生成单元测试套件，并且会参考已有测试文件的上下文来生成更相关的测试。"
+  },
+  {
+    "id": "Question 136",
+    "stem": "How is seat usage calculated for GitHub Copilot at the enterprise level during a billing cycle?",
+    "options": {
+      "A": "Number of seats × (Days elapsed / Total days in billing cycle)",
+      "B": "Total number of commits × Number of active developers",
+      "C": "Number of code suggestions × Number of accepted completions",
+      "D": "Total repository size × Number of organizations"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/enterprise-cloud@latest/copilot/managing-copilot/managing-copilot-for-your-enterprise/managing-access-to-copilot-in-your-enterprise/viewing-copilot-license-usage-in-your-enterprise",
+    "stem_zh": "在企业级别，GitHub Copilot 的席位使用量在计费周期内如何计算？",
+    "options_zh": {
+      "A": "席位数量 ×（已过天数 / 计费周期总天数）",
+      "B": "总提交次数 × 活跃开发者数量",
+      "C": "代码建议数量 × 接受的补全数量",
+      "D": "仓库总大小 × 组织数量"
+    },
+    "analysis_zh": "企业级 GitHub Copilot 的席位使用量按比例计算，公式为席位数乘以已过天数占计费周期总天数的比例。"
+  },
+  {
+    "id": "Question 137",
+    "stem": "How does GitHub Copilot's matching public code feature work?",
+    "options": {
+      "A": "It searches for matches by comparing code suggestions against an index of public GitHub repositories, which is refreshed every few months",
+      "B": "It performs real-time searches across all GitHub repositories, including private ones",
+      "C": "It only matches code from repositories that were created in the last 24 hours",
+      "D": "It checks code against external code hosting platforms outside of GitHub"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/using-github-copilot/finding-public-code-that-matches-github-copilot-suggestions",
+    "stem_zh": "GitHub Copilot 的匹配公共代码功能是如何工作的？",
+    "options_zh": {
+      "A": "它通过将代码建议与公共 GitHub 仓库的索引进行比较来搜索匹配项，该索引每隔几个月刷新一次。",
+      "B": "它对所有 GitHub 仓库（包括私有仓库）进行实时搜索。",
+      "C": "它只匹配过去 24 小时内创建的仓库中的代码。",
+      "D": "它将代码与 GitHub 之外的外部代码托管平台进行检查。"
+    },
+    "analysis_zh": "GitHub Copilot 的公共代码匹配功能通过将代码建议与公共 GitHub 仓库索引进行对比来工作，该索引定期刷新（约每几个月一次），而非实时搜索。"
+  },
+  {
+    "id": "Question 138",
+    "stem": "What are the post-processing checks performed on GitHub Copilot's responses?",
+    "options": {
+      "A": "Toxic language, relevancy, code quality (including security vulnerabilities), unique identifiers, and optional public code matching",
+      "B": "Only syntax validation and code formatting checks",
+      "C": "Performance benchmarking and memory usage optimization",
+      "D": "Just checking for compilation errors and runtime exceptions"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://resources.github.com/learn/pathways/copilot/essentials/how-github-copilot-handles-data/",
+    "stem_zh": "GitHub Copilot 的响应会执行哪些后处理检查？",
+    "options_zh": {
+      "A": "有毒语言、相关性、代码质量（包括安全漏洞）、唯一标识符以及可选的公共代码匹配",
+      "B": "仅语法验证和代码格式化检查",
+      "C": "性能基准测试和内存使用优化",
+      "D": "仅检查编译错误和运行时异常"
+    },
+    "analysis_zh": "GitHub Copilot 在生成响应后会进行多项后处理检查，包括过滤有毒语言、评估相关性、检查代码质量和安全漏洞、检测唯一标识符以及可选的公共代码匹配。"
+  },
+  {
+    "id": "Question 139",
+    "stem": "Which elements can GitHub Copilot use as context when generating suggestions?",
+    "options": {
+      "A": "Content in the current file, neighboring files, repository URLs, file paths, and previous chat interactions",
+      "B": "Only the current line of code being edited without any surrounding context",
+      "C": "Exclusively external documentation from the internet",
+      "D": "Just the project's README file and nothing else"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/using-github-copilot/getting-started-with-github-copilot#using-context-in-github-copilot",
+    "stem_zh": "GitHub Copilot 在生成建议时可以使用哪些元素作为上下文？",
+    "options_zh": {
+      "A": "当前文件的内容、相邻文件、仓库 URL、文件路径以及之前的 Chat 交互",
+      "B": "仅正在编辑的当前代码行，不包含任何周围上下文",
+      "C": "仅来自互联网的外部文档",
+      "D": "仅项目的 README 文件，不包含其他内容"
+    },
+    "analysis_zh": "GitHub Copilot 会利用多种上下文信息来生成建议，包括当前文件内容、相邻文件、仓库 URL、文件路径以及之前的 Chat 交互记录等。"
+  },
+  {
+    "id": "Question 140",
+    "stem": "Which of the following is NOT a selectable mode in GitHub Copilot Chat?",
+    "options": {
+      "A": "Ask",
+      "B": "Plan",
+      "C": "Translate",
+      "D": "Agent"
+    },
+    "answer": "C",
+    "analysis": "",
+    "reference": "https://code.visualstudio.com/docs/copilot/customization/custom-chat-modes#_builtin-chat-modes",
+    "stem_zh": "以下哪项不是 GitHub Copilot Chat 中可选择的模式？",
+    "options_zh": {
+      "A": "Ask",
+      "B": "Plan",
+      "C": "Translate",
+      "D": "Agent"
+    },
+    "analysis_zh": "GitHub Copilot Chat 内置的模式包括 Ask、Edit 和 Agent 等，Translate 并不是可选择的内置模式之一。"
+  },
+  {
+    "id": "Question 141",
+    "stem": "When adding context in the chat, it is possible to add single files, but not entire folders. This statement is:",
+    "options": {
+      "A": "False",
+      "B": "True"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-github-copilot/10-examine-chat-view-features",
+    "stem_zh": "在 Chat 中添加上下文时，可以添加单个文件，但不能添加整个文件夹。这个说法是：",
+    "options_zh": {
+      "A": "错误",
+      "B": "正确"
+    },
+    "analysis_zh": "该说法是错误的，在 GitHub Copilot Chat 中添加上下文时，既可以添加单个文件，也可以添加整个文件夹。"
+  },
+  {
+    "id": "Question 142",
+    "stem": "Which of the following can be added as context for your prompt in GitHub Copilot Chat?",
+    "options": {
+      "A": "Symbols",
+      "B": "Terminal command output",
+      "C": "Test failures",
+      "D": "External repositories",
+      "E": "Environment variables (such as PATH)"
+    },
+    "answer": "A,B,C",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-github-copilot/10-examine-chat-view-features",
+    "stem_zh": "以下哪些可以作为提示词的上下文添加到 GitHub Copilot Chat 中？（选择三项）",
+    "options_zh": {
+      "A": "符号（Symbols）",
+      "B": "终端命令输出",
+      "C": "测试失败信息",
+      "D": "外部仓库",
+      "E": "环境变量（如 PATH）"
+    },
+    "analysis_zh": "在 GitHub Copilot Chat 中，可以将符号、终端命令输出和测试失败信息作为上下文添加到提示词中，而外部仓库和环境变量不能直接作为上下文添加。"
+  },
+  {
+    "id": "Question 143",
+    "stem": "What are smart actions?",
+    "options": {
+      "A": "Smart actions are common and predefined tasks such as explaining code, fixing code or generating tests and docs that can be performed by GitHub Copilot Chat without the need to draft a prompt for them.",
+      "B": "Smart actions is an advanced GitHub Copilot modality used for debugging and fixing failing tests.",
+      "C": "Smart actions are predefined tasks designed to assist with common coding tasks inside an organization, which can be set on repository and organization level."
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/get-started-github-copilot/11-examine-inline-chat-smart-actions-quick-chat",
+    "stem_zh": "什么是智能操作（smart actions）？",
+    "options_zh": {
+      "A": "智能操作是常见且预定义的任务，如解释代码、修复代码或生成测试和文档，GitHub Copilot Chat 可以执行这些任务而无需用户为其编写提示词。",
+      "B": "智能操作是一种高级的 GitHub Copilot 模式，用于调试和修复失败的测试。",
+      "C": "智能操作是预定义的任务，旨在帮助完成组织内常见的编码任务，可以在仓库和组织级别进行设置。"
+    },
+    "analysis_zh": "智能操作是 GitHub Copilot Chat 中预定义的常见任务（如 /explain、/fix、/tests 等），用户无需编写详细的提示词即可直接使用。"
+  },
+  {
+    "id": "Question 144",
+    "stem": "Which features are available in GitHub Copilot and GitHub Copilot Chat?",
+    "options": {
+      "A": "Code line completions, inline chat, chat view, quick chat, smart actions",
+      "B": "Code line completions, inline chat, chat view, smart actions, code research",
+      "C": "Code line completions, inline chat, code container, quick chat"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/develop-code-features-using-github-copilot-tools/2-examine-code-development-features-github-copilot",
+    "stem_zh": "以下哪些功能在 GitHub Copilot 和 GitHub Copilot Chat 中可用？",
+    "options_zh": {
+      "A": "代码行补全、内联 Chat、Chat 视图、快速 Chat、智能操作",
+      "B": "代码行补全、内联 Chat、Chat 视图、智能操作、代码研究",
+      "C": "代码行补全、内联 Chat、代码容器、快速 Chat"
+    },
+    "analysis_zh": "GitHub Copilot 和 GitHub Copilot Chat 提供的功能包括代码行补全、内联 Chat、Chat 视图、快速 Chat 和智能操作。"
+  },
+  {
+    "id": "Question 145",
+    "stem": "Which of the sentences is correct?",
+    "options": {
+      "A": "Chat participants (such as `@workspace` or `@vscode`) can be used to provide extra context about the code base, a specific domain or technology.",
+      "B": "Slash commands (such as `/tests`, `/fix` or `/explain`) are a way to concisely tell what you would like to achieve with the prompt.",
+      "C": "It is not possible to combine chat participants, commands and chat variables in a single prompt.",
+      "D": "Chat participants can only be used to tag other members in the same organization."
+    },
+    "answer": "A,B",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/develop-code-features-using-github-copilot-tools/3-examine-github-copilot-best-practices",
+    "stem_zh": "以下哪些说法是正确的？（选择二项）",
+    "options_zh": {
+      "A": "Chat 参与者（如 `@workspace` 或 `@vscode`）可用于提供关于代码库、特定领域或技术的额外上下文。",
+      "B": "斜杠命令（如 `/tests`、`/fix` 或 `/explain`）是一种简洁地表达你希望通过提示词实现什么目标的方式。",
+      "C": "不能在单个提示词中组合使用 Chat 参与者、命令和 Chat 变量。",
+      "D": "Chat 参与者只能用于标记同一组织中的其他成员。"
+    },
+    "analysis_zh": "Chat 参与者（如 @workspace）用于提供额外上下文，斜杠命令（如 /tests、/fix）用于简洁表达意图，两者可以在单个提示词中组合使用，且 Chat 参与者并非用于标记成员。"
+  },
+  {
+    "id": "Question 146",
+    "stem": "What is an alias used for when using GitHub Copilot?",
+    "options": {
+      "A": "Using an alias enables GitHub Copilot  CLI to automatically execute commands in the command line.",
+      "B": "Using an alias lets you indicate in Git commits that GitHub Copilot authored changes.",
+      "C": "Using an alias allows GitHub to review and author pull requests on your behalf."
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/github-copilot-across-environments/4-git-hub-copilot-for-the-command-line",
+    "stem_zh": "在使用 GitHub Copilot 时，别名（alias）的用途是什么？",
+    "options_zh": {
+      "A": "使用别名可以让 GitHub Copilot CLI 在命令行中自动执行命令。",
+      "B": "使用别名可以在 Git 提交中标明 GitHub Copilot 编写了更改。",
+      "C": "使用别名允许 GitHub 代表你审查和编写拉取请求。"
+    },
+    "analysis_zh": "在 GitHub Copilot CLI 中，使用别名（alias）可以让 CLI 命令自动执行，而无需每次手动确认。"
+  },
+  {
+    "id": "Question 147",
+    "stem": "Which statements are correct about GitHub Copilot CLI?",
+    "options": {
+      "A": "Prompts are not retained, whereas usage analytics are retained by default.",
+      "B": "It is possible to opt out of optional usage analytics.",
+      "C": "Responses generated by Copilot CLI can be reviewed after each suggestion.",
+      "D": "Both prompts and usage analytics are retained by default.",
+      "E": "It is not possible to opt out of optional usage analytics because they are anonymized.",
+      "F": "GitHub Copilot CLI can only explain or suggest commands but not execute them on a users's behalf."
+    },
+    "answer": "A,B,C",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/github-copilot-across-environments/4-git-hub-copilot-for-the-command-line",
+    "stem_zh": "以下关于 GitHub Copilot CLI 的说法哪些是正确的？（选择三项）",
+    "options_zh": {
+      "A": "提示词默认不会被保留，但使用分析默认会被保留。",
+      "B": "可以选择退出可选的使用分析。",
+      "C": "每次建议后都可以审查 Copilot CLI 生成的响应。",
+      "D": "提示词和使用分析默认都会被保留。",
+      "E": "因为使用分析是匿名化的，所以无法选择退出。",
+      "F": "GitHub Copilot CLI 只能解释或推荐命令，但不能代表用户执行命令。"
+    },
+    "analysis_zh": "关于 GitHub Copilot CLI：提示词默认不保留但使用分析默认保留（A 正确）；用户可以选择退出可选的使用分析（B 正确）；每次建议后可审查生成的响应（C 正确）。"
+  },
+  {
+    "id": "Question 148",
+    "stem": "You are developing an application in Kotlin. What do you have to keep in mind when using GitHub Copilot?",
+    "options": {
+      "A": "Kotlin is not included in the languages where GitHub Copilot offers strong support. As a result, code suggestion might not be of the same quality as code suggestions in a better-supported language, such as Ruby, Java or C#.",
+      "B": "Kotlin is not included in the languages where GitHub Copilot offers strong support. As a result, GitHub Copilot won't be able to explain or fix code.",
+      "C": "Kotlin is not included in the languages where GitHub Copilot offers strong support. As a result, GitHub Copilot can still explain or fix code, but will not be able to provide code suggestions.",
+      "D": "None is correct as Kotlin is included in the languages where GitHub Copilot offers strong support."
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/github-copilot-across-environments/2-code-completion-with-git-hub-copilot",
+    "stem_zh": "你正在使用 Kotlin 开发应用程序。使用 GitHub Copilot 时需要注意什么？",
+    "options_zh": {
+      "A": "Kotlin 不在 GitHub Copilot 提供强支持的语言列表中。因此，代码建议的质量可能不如支持更好的语言（如 Ruby、Java 或 C#）的建议。",
+      "B": "Kotlin 不在 GitHub Copilot 提供强支持的语言列表中。因此，GitHub Copilot 无法解释或修复代码。",
+      "C": "Kotlin 不在 GitHub Copilot 提供强支持的语言列表中。因此，GitHub Copilot 仍然可以解释或修复代码，但无法提供代码建议。",
+      "D": "以上都不正确，因为 Kotlin 在 GitHub Copilot 提供强支持的语言列表中。"
+    },
+    "analysis_zh": "Kotlin 不属于 GitHub Copilot 提供强支持的语言，因此代码建议的质量可能不如 Ruby、Java 或 C# 等强支持语言，但 Copilot 仍然可以工作。"
+  },
+  {
+    "id": "Question 149",
+    "stem": "Where can you find information about concerns related to security, intellectual property and privacy regarding the usage of GitHub Copilot?",
+    "options": {
+      "A": "GitHub Copilot Trust Center",
+      "B": "GitHub Copilot Compliance Center",
+      "C": "GitHub Copilot Compliance Hub",
+      "D": "GitHub Copilot Legal Center",
+      "E": "GitHub Copilot Legal and Trust Center"
+    },
+    "answer": "A",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/github-copilot-management-and-customizations/3-github-copilot-contractual-protections-disabling-matching-public-code",
+    "stem_zh": "你可以在哪里找到关于 GitHub Copilot 使用中涉及安全、知识产权和隐私问题的信息？",
+    "options_zh": {
+      "A": "GitHub Copilot Trust Center",
+      "B": "GitHub Copilot Compliance Center",
+      "C": "GitHub Copilot Compliance Hub",
+      "D": "GitHub Copilot Legal Center",
+      "E": "GitHub Copilot Legal and Trust Center"
+    },
+    "analysis_zh": "GitHub Copilot Trust Center 是获取有关安全、知识产权和隐私相关问题信息的官方渠道。"
+  },
+  {
+    "id": "Question 150",
+    "stem": "Which GitHub Copilot subscription plans support organization-level custom instructions?",
+    "options": {
+      "A": "All plans that include GitHub Copilot",
+      "B": "Copilot Pro+ and above",
+      "C": "Copilot Business and Copilot Enterprise",
+      "D": "Copilot Enterprise only"
+    },
+    "answer": "C",
+    "analysis": "",
+    "reference": "https://docs.github.com/en/copilot/customizing-copilot/adding-organization-custom-instructions-for-github-copilot",
+    "stem_zh": "哪些 GitHub Copilot 订阅计划支持组织级别的自定义指令？",
+    "options_zh": {
+      "A": "所有包含 GitHub Copilot 的计划",
+      "B": "Copilot Pro+ 及以上",
+      "C": "Copilot Business 和 Copilot Enterprise",
+      "D": "仅 Copilot Enterprise"
+    },
+    "analysis_zh": "组织级别的自定义指令功能需要 Copilot Business 或 Copilot Enterprise 计划，Pro 和 Pro+ 计划不支持此功能。"
+  },
+  {
+    "id": "Question 151",
+    "stem": "Which statements are correct regarding the usage of @workspace and #codebase?",
+    "options": {
+      "A": "Even though `@workspace` and `#codebase` both enable to ask questions about the entire codebase, the usage of `#codebase` is recommended.",
+      "B": "The `#codebase` keyword can be used in all chat modes.",
+      "C": "The `@workspace` keyword can be used in all chat modes.",
+      "D": "The `@workspace` keyword is in charge of the user prompt and can therefore use other tools."
+    },
+    "answer": "A,B",
+    "analysis": "",
+    "reference": "https://learn.microsoft.com/en-us/training/modules/generate-documentation-using-github-copilot-tools/3-examine-github-copilot-prompts-keywords",
+    "stem_zh": "关于 @workspace 和 #codebase 的使用，以下哪些说法是正确的？（选择二项）",
+    "options_zh": {
+      "A": "虽然 `@workspace` 和 `#codebase` 都支持就整个代码库提问，但建议使用 `#codebase`。",
+      "B": "`#codebase` 关键字可以在所有 Chat 模式中使用。",
+      "C": "`@workspace` 关键字可以在所有 Chat 模式中使用。",
+      "D": "`@workspace` 关键字负责用户提示词，因此可以使用其他工具。"
+    },
+    "analysis_zh": "`#codebase` 和 `@workspace` 都能用于查询整个代码库，但推荐使用 `#codebase`（A 正确）；`#codebase` 关键字可在所有 Chat 模式中使用（B 正确）。"
   }
 ];
 
