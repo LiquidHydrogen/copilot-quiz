@@ -2346,7 +2346,7 @@ window.QUESTIONS_DATA = [
   },
   {
     "id": "Question 116",
-    "stem": "What IDEs does GitHub Copilot support?",
+    "stem": "What IDEs does GitHub Copilot support? (Choose two)",
     "options": {
       "A": "Visual Studio Code, Xcode, Vim/NeoVim",
       "B": "Azure Data Studio, Visual Studio, IntelliJ IDEA",
@@ -2388,7 +2388,7 @@ window.QUESTIONS_DATA = [
   },
   {
     "id": "Question 118",
-    "stem": "What are some of the principles of Prompt Engineering?",
+    "stem": "What are some of the principles of Prompt Engineering? (Choose three)",
     "options": {
       "A": "Focus on a single, well-defined task",
       "B": "Ensure instructions are detailed and explicit",
@@ -2430,7 +2430,7 @@ window.QUESTIONS_DATA = [
   },
   {
     "id": "Question 120",
-    "stem": "Which is true about Copilot's Content exclusions?",
+    "stem": "Which is true about Copilot's Content exclusions? (Choose two)",
     "options": {
       "A": "Context exclusions can be configured at the repository and organization level",
       "B": "Copilot offers different plans with privacy considerations",
@@ -2554,7 +2554,7 @@ window.QUESTIONS_DATA = [
   },
   {
     "id": "Question 126",
-    "stem": "What happens when you exclude content from GitHub Copilot?",
+    "stem": "What happens when you exclude content from GitHub Copilot? (Choose two)",
     "options": {
       "A": "Code completion will not be available in the affected files.",
       "B": "The content in affected files will not inform code completion suggestions in other files.",
@@ -2886,7 +2886,7 @@ window.QUESTIONS_DATA = [
   },
   {
     "id": "Question 142",
-    "stem": "Which of the following can be added as context for your prompt in GitHub Copilot Chat?",
+    "stem": "Which of the following can be added as context for your prompt in GitHub Copilot Chat? (Choose three)",
     "options": {
       "A": "Symbols",
       "B": "Terminal command output",
@@ -2947,7 +2947,7 @@ window.QUESTIONS_DATA = [
   },
   {
     "id": "Question 145",
-    "stem": "Which of the sentences is correct?",
+    "stem": "Which of the sentences is correct? (Choose two)",
     "options": {
       "A": "Chat participants (such as `@workspace` or `@vscode`) can be used to provide extra context about the code base, a specific domain or technology.",
       "B": "Slash commands (such as `/tests`, `/fix` or `/explain`) are a way to concisely tell what you would like to achieve with the prompt.",
@@ -2987,7 +2987,7 @@ window.QUESTIONS_DATA = [
   },
   {
     "id": "Question 147",
-    "stem": "Which statements are correct about GitHub Copilot CLI?",
+    "stem": "Which statements are correct about GitHub Copilot CLI? (Choose three)",
     "options": {
       "A": "Prompts are not retained, whereas usage analytics are retained by default.",
       "B": "It is possible to opt out of optional usage analytics.",
@@ -3077,7 +3077,7 @@ window.QUESTIONS_DATA = [
   },
   {
     "id": "Question 151",
-    "stem": "Which statements are correct regarding the usage of @workspace and #codebase?",
+    "stem": "Which statements are correct regarding the usage of @workspace and #codebase? (Choose two)",
     "options": {
       "A": "Even though `@workspace` and `#codebase` both enable to ask questions about the entire codebase, the usage of `#codebase` is recommended.",
       "B": "The `#codebase` keyword can be used in all chat modes.",
