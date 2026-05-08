@@ -939,14 +939,14 @@
     "answer": "C",
     "analysis": "The duplication detection filter can be configured at the organization level to prevent GitHub Copilot from suggesting publicly available code snippets.",
     "reference": "GitHub Copilot organization-level configuration documentation.",
-    "stem_zh": "使用 GitHub Copilot Chat 生成单元测试时，你会使用哪个斜杠命令？",
+    "stem_zh": "哪个 GitHub Copilot 功能可以在组织级别配置，以防止 GitHub Copilot 建议公开可用的代码片段？",
     "options_zh": {
-      "A": "/init-tests",
-      "B": "/tests",
-      "C": "/generate-tests",
-      "D": "/create-tests"
+      "A": "IDE 中的 GitHub Copilot Chat",
+      "B": "GitHub Mobile 中的 GitHub Copilot Chat",
+      "C": "GitHub Copilot 重复检测过滤器",
+      "D": "GitHub Copilot 访问 Bing"
     },
-    "analysis_zh": "/tests 斜杠命令用于在 GitHub Copilot Chat 中生成单元测试。此命令指示 Copilot 为选定代码或指定功能生成测试用例。"
+    "analysis_zh": "重复检测过滤器可以在组织级别进行配置，以防止 GitHub Copilot 建议公开可用的代码片段。"
   },
   {
     "id": "Question 47",
@@ -960,15 +960,14 @@
     "answer": "D",
     "analysis": "\"\"/tests: Generate unit tests for the selected code or function.\"\" This is the official description of the /tests slash command, confirming it is used to create unit tests.",
     "reference": "GitHub Copilot Chat slash command reference.",
-    "stem_zh": "识别 GitHub Copilot 代码建议生命周期中涉及的步骤。（每项正确答案呈现解决方案的一部分。选择两项）",
+    "stem_zh": "使用 GitHub Copilot Chat 生成单元测试时，你会使用哪个斜杠命令？",
     "options_zh": {
-      "A": "生成建议",
-      "B": "接受建议",
-      "C": "人工审查",
-      "D": "自动部署",
-      "E": "模型再训练"
+      "A": "/init-tests",
+      "B": "/create-tests",
+      "C": "/generate-tests",
+      "D": "/tests"
     },
-    "analysis_zh": "GitHub Copilot 代码建议的生命周期包括生成建议和接受建议。开发者审查建议后决定是否接受。"
+    "analysis_zh": "/tests 斜杠命令用于在 GitHub Copilot Chat 中生成单元测试。此命令指示 Copilot 为选定代码或指定功能生成测试用例。"
   },
   {
     "id": "Question 48",
@@ -983,14 +982,15 @@
     "answer": "A,B",
     "analysis": "Exact extracts: \"Copilot first captures the context of the developer's code and environment.\"",
     "reference": "GitHub Copilot technical overview documentation.",
-    "stem_zh": "为什么确保用于生成式 AI（Gen AI）工具的代码安全很重要？",
+    "stem_zh": "识别 GitHub Copilot 代码建议生命周期中涉及的步骤。（每项正确答案呈现解决方案的一部分。选择两项）",
     "options_zh": {
-      "A": "确保代码安全可防止未授权访问和潜在数据泄露。",
-      "B": "安全代码运行速度更快。",
-      "C": "安全代码产生更好的 AI 输出。",
-      "D": "安全代码减少存储需求。"
+      "A": "生成建议",
+      "B": "捕获用户上下文",
+      "C": "处理遥测数据",
+      "D": "重新训练模型",
+      "E": "存储用户数据"
     },
-    "analysis_zh": "确保用于 Gen AI 工具的代码安全很重要，因为它可以防止未授权访问和潜在数据泄露，保护敏感信息和系统完整性。"
+    "analysis_zh": "GitHub Copilot 代码建议的生命周期包括捕获用户上下文和生成建议两个关键步骤。Copilot 首先捕获开发者代码和环境的上下文，然后生成建议。"
   },
   {
     "id": "Question 49",
@@ -1004,14 +1004,14 @@
     "answer": "A",
     "analysis": "\"\"Securing the code used with generative AI prevents unauthorized access, helps safeguard sensitive data, and protects against potential breaches.\"\" This confirms option A is correct (focuses on preventing unauthorized access/breaches).",
     "reference": "GitHub Copilot responsible use and AI security documentation.",
-    "stem_zh": "开发者在依赖 GitHub Copilot 生成涉及统计分析的代码时应考虑什么？",
+    "stem_zh": "为什么确保用于生成式 AI（Gen AI）工具的代码安全很重要？",
     "options_zh": {
-      "A": "GitHub Copilot 可以独立验证结果的统计显著性。",
-      "B": "生成的代码应由领域专家验证其统计正确性。",
-      "C": "GitHub Copilot 始终使用最新的统计方法。",
-      "D": "不需要额外验证，因为 Copilot 经过大量数据训练。"
+      "A": "确保代码安全可防止未授权访问和潜在数据泄露。",
+      "B": "确保代码安全有助于开发更先进的 AI 功能。",
+      "C": "确保代码安全使 AI 系统能够更有效地处理更大的数据集。",
+      "D": "确保代码安全维护 AI 系统的完整性。"
     },
-    "analysis_zh": "开发者应考虑让领域专家验证 Copilot 生成的统计代码的正确性，因为 Copilot 可能无法完全理解特定领域的统计要求。"
+    "analysis_zh": "确保用于 Gen AI 工具的代码安全很重要，因为它可以防止未授权访问和潜在数据泄露，保护敏感信息和系统完整性。"
   },
   {
     "id": "Question 50",
@@ -1025,15 +1025,14 @@
     "answer": "B",
     "analysis": "Developers should consider that GitHub Copilot's suggestions are based on statistical trends and may not always be accurate for specific datasets, requiring careful validation.",
     "reference": "GitHub Copilot data analysis limitations.",
-    "stem_zh": "使用哪些 REST API 端点来修改 GitHub Copilot Business 订阅的详细信息？（每项正确答案呈现解决方案的一部分。选择两项）",
+    "stem_zh": "开发者在依赖 GitHub Copilot 生成涉及统计分析的代码时应考虑什么？",
     "options_zh": {
-      "A": "将团队添加到组织的 Copilot 订阅",
-      "B": "从组织的 Copilot 订阅中移除团队",
-      "C": "获取 Copilot 使用统计",
-      "D": "更新 Copilot 计划类型",
-      "E": "查看审计日志"
+      "A": "GitHub Copilot 可以独立验证结果的统计显著性。",
+      "B": "GitHub Copilot 的建议基于统计趋势，可能不总是适用于特定数据集。",
+      "C": "GitHub Copilot 会自动纠正用户初始代码中发现的统计错误。",
+      "D": "GitHub Copilot 可以设计以前未记录的新统计方法。"
     },
-    "analysis_zh": "GitHub Copilot Business 订阅 REST API 允许将团队添加到组织的 Copilot 订阅以及从中移除团队。"
+    "analysis_zh": "开发者应考虑 GitHub Copilot 的建议基于统计趋势，可能不总是准确适用于特定数据集，需要仔细验证。"
   },
   {
     "id": "Question 51",
@@ -1048,15 +1047,15 @@
     "answer": "A,E",
     "analysis": "The REST API endpoints are used to add and remove teams from the Copilot Business subscription within an organization.",
     "reference": "GitHub Copilot Business API documentation.",
-    "stem_zh": "GitHub Copilot 中重复检测过滤器的主要目的是什么？",
+    "stem_zh": "使用哪些 REST API 端点来修改 GitHub Copilot Business 订阅的详细信息？（每项正确答案呈现解决方案的一部分。选择两项）",
     "options_zh": {
-      "A": "将用户生成的代码与私有仓库进行比对以查找潜在匹配。",
-      "B": "将用户生成的代码与公共仓库进行比对以查找潜在匹配。",
-      "C": "检测代码中的语法错误。",
-      "D": "验证代码是否遵循编码标准。",
-      "E": "检查代码的性能问题。"
+      "A": "将团队添加到组织的 Copilot 订阅",
+      "B": "升级或降级订阅层级",
+      "C": "在 GitHub 组织之间迁移 Copilot 席位分配",
+      "D": "根据 GitHub 仓库大小重新分配 Copilot 席位",
+      "E": "从组织的 Copilot 订阅中移除团队"
     },
-    "analysis_zh": "重复检测过滤器的主要目的是将用户生成的代码与私有仓库进行比对以查找潜在匹配，帮助防止无意的代码重复。"
+    "analysis_zh": "GitHub Copilot Business 订阅的 REST API 端点用于将团队添加到组织的 Copilot 订阅以及从中移除团队。"
   },
   {
     "id": "Question 52",
@@ -1070,15 +1069,14 @@
     "answer": "D",
     "analysis": "\"\"GitHub Copilot has a duplication detection filter that checks suggestions of about 150 characters or longer against public code on GitHub. If a match is found, the suggestion is blocked if you have configured blocking.\"\" This clearly defines the purpose as preventing Copilot from suggesting verbatim code found publicly.",
     "reference": "GitHub Copilot duplication detection documentation.",
-    "stem_zh": "如果编辑器中的代码建议不工作，可能的原因有哪些？（选择三项）",
+    "stem_zh": "GitHub Copilot 中重复检测过滤器的主要目的是什么？",
     "options_zh": {
-      "A": "你正在 .gitignore 包含的文件中工作",
-      "B": "Copilot 扩展未正确安装",
-      "C": "网络连接问题",
-      "D": "文件类型不受支持",
-      "E": "代码太短"
+      "A": "将用户生成的代码与私有仓库进行比对以查找潜在匹配。",
+      "B": "允许管理员根据自定义标准控制开发者可见的建议。",
+      "C": "鼓励用户遵循编码最佳实践以防止代码重复。",
+      "D": "检测并阻止与 GitHub 上公开代码片段匹配的建议（约 150 个字符以上）。"
     },
-    "analysis_zh": "代码建议不工作的可能原因包括在 .gitignore 包含的文件中工作、Copilot 扩展未正确安装以及网络连接问题。"
+    "analysis_zh": "GitHub Copilot 的重复检测过滤器会将约 150 个字符或更长的建议与 GitHub 上的公开代码进行比对。如果发现匹配且配置了阻止功能，则会阻止该建议。"
   },
   {
     "id": "Question 53",
@@ -1093,14 +1091,15 @@
     "answer": "B,C,E",
     "analysis": "Excerpts: \"\"Copilot requires an active internet connection to provide suggestions.\"\" \"\"Copilot does not support all programming languages.\"\" \"\"Verify that you have a valid Copilot license.\"\"",
     "reference": "GitHub Copilot troubleshooting documentation.",
-    "stem_zh": "在 GitHub Copilot 中启用公共代码过滤器时，识别公共代码匹配的过程是什么？",
+    "stem_zh": "如果编辑器中的代码建议不工作，可能的原因有哪些？（选择三项）",
     "options_zh": {
-      "A": "通过设计用于检测公共代码的过滤器运行代码建议",
-      "B": "手动将代码与 GitHub 上的公共仓库进行比对",
-      "C": "使用第三方工具扫描代码匹配",
-      "D": "依赖社区报告代码匹配"
+      "A": "你正在 .gitignore 包含的文件中工作",
+      "B": "你没有有效的互联网连接",
+      "C": "你的编程语言不受支持",
+      "D": "你的内容排除处于活动状态并阻止了 GitHub Copilot 的使用",
+      "E": "你没有有效的 GitHub Copilot 许可证"
     },
-    "analysis_zh": "当启用公共代码过滤器时，Copilot 通过设计用于检测公共代码的过滤器运行代码建议，阻止与公共代码匹配的建议。"
+    "analysis_zh": "代码建议不工作的可能原因包括：没有有效的互联网连接、编程语言不受支持，以及没有有效的 GitHub Copilot 许可证。"
   },
   {
     "id": "Question 54",
@@ -1114,14 +1113,14 @@
     "answer": "A",
     "analysis": "When the public code filter is enabled, GitHub Copilot runs code suggestions through filters designed to detect matches with publicly available code. This helps prevent the generation of code that might infringe on copyright or licensing agreements.",
     "reference": "GitHub Copilot documentation on public code filtering and licensing.",
-    "stem_zh": "为 GitHub Copilot 制作提示时，什么推荐策略可以增强生成代码的相关性？",
+    "stem_zh": "在 GitHub Copilot 中启用公共代码过滤器时，识别公共代码匹配的过程是什么？",
     "options_zh": {
-      "A": "尽可能保持提示简短，使用单词或简短短语。",
-      "B": "提供详细的上下文和具体的代码需求。",
-      "C": "使用尽可能多的编程术语。",
-      "D": "只提供函数名称，不提供其他上下文。"
+      "A": "通过设计用于检测公共代码的过滤器运行代码建议",
+      "B": "使用机器学习将建议与公共代码进行比对",
+      "C": "分析正在编写代码的上下文和结构",
+      "D": "审查用户的浏览历史以识别公共仓库"
     },
-    "analysis_zh": "推荐策略是提供详细的上下文和具体的代码需求，这有助于 Copilot 生成更相关和准确的代码建议。"
+    "analysis_zh": "当启用公共代码过滤器时，GitHub Copilot 通过设计用于检测公共代码的过滤器运行代码建议，帮助防止可能侵犯版权或许可协议的代码生成。"
   },
   {
     "id": "Question 55",
@@ -1135,14 +1134,14 @@
     "answer": "D",
     "analysis": "\"\"To get the best results from GitHub Copilot, provide clear prompts and, when possible, include examples of expected input and output.\"\" This establishes that including examples is a recommended prompt engineering strategy.",
     "reference": "GitHub Copilot prompt engineering documentation.",
-    "stem_zh": "哪个 GitHub Copilot 计划可以让 Azure DevOps 组织使用而无需 GitHub Enterprise 许可？",
+    "stem_zh": "为 GitHub Copilot 制作提示时，什么推荐策略可以增强生成代码的相关性？",
     "options_zh": {
-      "A": "GitHub Copilot Individual",
-      "B": "GitHub Copilot Business",
-      "C": "GitHub Copilot Enterprise",
-      "D": "GitHub Copilot Free"
+      "A": "尽可能保持提示简短，使用单词或简短短语。",
+      "B": "使用自然语言编写提示，不使用任何编程语言。",
+      "C": "避免提及编程语言以允许更灵活的建议。",
+      "D": "在提示中提供期望输入和输出的示例。"
     },
-    "analysis_zh": "GitHub Copilot Business 允许 Azure DevOps 组织使用而无需 GitHub Enterprise 许可，提供了灵活的集成选项。"
+    "analysis_zh": "为了从 GitHub Copilot 获得最佳结果，应提供清晰的提示，并在可能的情况下包含期望输入和输出的示例。这是一种推荐的提示工程策略。"
   },
   {
     "id": "Question 56",
@@ -1156,14 +1155,14 @@
     "answer": "C",
     "analysis": "GitHub Copilot for Azure DevOps is available to Azure DevOps organizations without requiring a GitHub Enterprise license. This makes it the correct plan for such organizations.",
     "reference": "GitHub Copilot for Azure DevOps documentation.",
-    "stem_zh": "以下哪些 GitHub Copilot Business 相关活动可以使用组织审计日志跟踪？",
+    "stem_zh": "哪个 GitHub Copilot 计划可以让 Azure DevOps 组织使用而无需 GitHub Enterprise 许可？",
     "options_zh": {
-      "A": "接受的聊天建议",
-      "B": "Copilot 安装事件",
-      "C": "代码提交历史",
-      "D": "拉取请求评论"
+      "A": "GitHub Copilot Individual",
+      "B": "GitHub Copilot Enterprise",
+      "C": "GitHub Copilot for Azure DevOps",
+      "D": "Copilot Teams"
     },
-    "analysis_zh": "组织审计日志可以跟踪接受的聊天建议等 GitHub Copilot Business 相关活动，帮助管理员监控使用情况。"
+    "analysis_zh": "GitHub Copilot for Azure DevOps 可供 Azure DevOps 组织使用，无需 GitHub Enterprise 许可证。这使其成为此类组织的正确选择。"
   },
   {
     "id": "Question 57",
@@ -1177,14 +1176,14 @@
     "answer": "C",
     "analysis": "nan Organization audit logs track changes to content exclusion settings, providing administrators with visibility into configuration changes. nan nan",
     "reference": "GitHub Copilot Business audit logs.",
-    "stem_zh": "在 GitHub Copilot 中使用自定义模型的好处是什么？",
+    "stem_zh": "以下哪些 GitHub Copilot Business 相关活动可以使用组织审计日志跟踪？",
     "options_zh": {
-      "A": "获得基于组织特定代码库训练的建议",
-      "B": "降低 Copilot 订阅成本",
-      "C": "提高所有编程语言的支持",
-      "D": "减少网络带宽使用"
+      "A": "接受的聊天建议",
+      "B": "GitHub Copilot 做出的代码建议",
+      "C": "内容排除设置的更改",
+      "D": "被重复检测过滤阻止的建议"
     },
-    "analysis_zh": "使用自定义模型的主要好处是获得基于组织特定代码库训练的建议，提供更相关和上下文化的结果。"
+    "analysis_zh": "组织审计日志可以跟踪内容排除设置的更改，为管理员提供对配置变更的可见性。"
   },
   {
     "id": "Question 58",
@@ -1198,14 +1197,14 @@
     "answer": "B",
     "analysis": "nan Custom models in GitHub Copilot allow the tool to learn from the specific code patterns and practices within your repositories. This results in suggestions that are more aligned with your organization's coding standards and conventions, improving the relevance and accuracy of the generated code. nan nan",
     "reference": "GitHub Copilot Enterprise documentation on custom models.",
-    "stem_zh": "GitHub Copilot Chat 如何帮助理解现有代码库？",
+    "stem_zh": "在 GitHub Copilot 中使用自定义模型的好处是什么？",
     "options_zh": {
-      "A": "通过自动生成代码库的完整文档",
-      "B": "通过解释代码功能并回答关于代码库的问题",
-      "C": "通过重写整个代码库以提高可读性",
-      "D": "通过删除未使用的代码来简化代码库"
+      "A": "响应生成更快，显示更早",
+      "B": "响应使用你仓库中的实践和模式",
+      "C": "响应使用组织的 LLM 引擎",
+      "D": "响应保证正确"
     },
-    "analysis_zh": "GitHub Copilot Chat 通过解释代码功能并回答关于代码库的问题来帮助理解现有代码库，使开发者能够更快地熟悉代码。"
+    "analysis_zh": "GitHub Copilot 中的自定义模型允许工具从你仓库中的特定代码模式和实践中学习。这使得建议更符合组织的编码标准和规范，提高生成代码的相关性和准确性。"
   },
   {
     "id": "Question 59",
@@ -1219,14 +1218,14 @@
     "answer": "C",
     "analysis": "nan GitHub Copilot Chat helps in understanding existing codebases by answering questions about the code and generating explanations. This allows developers to quickly grasp the functionality and structure of unfamiliar code. nan nan",
     "reference": "GitHub Copilot Chat documentation on code understanding.",
-    "stem_zh": "/fix 斜杠命令执行什么具体功能？",
+    "stem_zh": "GitHub Copilot Chat 如何帮助理解现有代码库？",
     "options_zh": {
-      "A": "修复代码中的语法错误",
-      "B": "修复代码中的逻辑错误",
-      "C": "修复代码中的性能问题",
-      "D": "修复代码中的安全漏洞"
+      "A": "通过运行代码检查和格式化工具。",
+      "B": "通过提供代码结构的可视化图表。",
+      "C": "通过回答关于代码的问题并生成解释。",
+      "D": "通过自动重构代码以提高可读性。"
     },
-    "analysis_zh": "/fix 斜杠命令用于修复代码中的问题，包括语法错误和逻辑错误，帮助开发者快速解决代码问题。"
+    "analysis_zh": "GitHub Copilot Chat 通过回答关于代码的问题并生成解释来帮助理解现有代码库。这使开发者能够快速掌握不熟悉代码的功能和结构。"
   },
   {
     "id": "Question 60",
@@ -1240,14 +1239,14 @@
     "answer": "D",
     "analysis": "nan /fix: Propose changes to resolve detected issues, such as syntax errors or common programming mistakes, in the selected code. This confirms that the /fix command is used to suggest corrections for identified problems. nan nan",
     "reference": "GitHub Copilot Chat command reference.",
-    "stem_zh": "选择一种提高 GitHub Copilot Chat 性能的策略。",
+    "stem_zh": "/fix 斜杠命令执行什么具体功能？",
     "options_zh": {
-      "A": "在提示中提供更多上下文和具体需求",
-      "B": "使用更短的提示以加快响应速度",
-      "C": "避免使用斜杠命令",
-      "D": "只在简单任务中使用 Copilot Chat"
+      "A": "使用静态分析工具启动代码审查以检查安全和逻辑错误。",
+      "B": "将伪代码转换为可执行代码，优化可读性和可维护性。",
+      "C": "根据语言语法和最佳实践生成新的代码片段。",
+      "D": "为检测到的问题提出更改建议，纠正语法错误和编程错误。"
     },
-    "analysis_zh": "提高 GitHub Copilot Chat 性能的策略是在提示中提供更多上下文和具体需求，这有助于 Copilot 生成更准确和相关的响应。"
+    "analysis_zh": "/fix 命令用于为检测到的问题提出更改建议，例如选定代码中的语法错误或常见编程错误。它会建议对已识别问题的修正方案。"
   },
   {
     "id": "Question 62",
